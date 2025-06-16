@@ -12,3 +12,9 @@ while (endDate <= startDate + 10000) {
 }
 
 console.log("while expires");
+// how will it behave?
+console.log("Start");
+setTimeout(function cb() {
+  console.log("Callback");
+}, 0);
+console.log("End");
