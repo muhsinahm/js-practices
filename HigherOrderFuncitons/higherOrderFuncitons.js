@@ -11,14 +11,21 @@ const circumference = function (radius) {
 const diameter = function (radius) {
   return 2 * radius;
 };
-const calculate = function (radius, logic) {
+
+// if we rewrite function like this "calculate" will be
+// available in all arrays throughout the code
+
+Array.prototype.calculate = function (arr, logic) {
   const output = [];
-  for (let i = 0; i < radius?.length; i++) {
-    output.push(logic(radius[i]));
+  for (let i = 0; i < arr?.length; i++) {
+    output.push(logic(arr[i]));
   }
   return output;
 };
 
-console.log(calculate(radius, area));
-console.log(calculate(radius, circumference));
-console.log(calculate(radius, diameter));
+// this can also be done using map
+console.log(radius?.map(area));
+
+// after putting calculate in Array.prototype we can now call calculate as
+
+console.log(radius.calculate(area));
